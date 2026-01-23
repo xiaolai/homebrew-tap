@@ -1,6 +1,6 @@
 cask "vmark" do
-  version "0.3.0"
-  sha256 "PLACEHOLDER_SHA256"
+  version "0.2.3"
+  sha256 "92e001b136da8a8c5eac6b3fe3de35be1fa5bad97d27a925ec039282d299e729"
 
   url "https://github.com/xiaolai/vmark/releases/download/v#{version}/VMark_#{version}_universal.dmg"
   name "VMark"
