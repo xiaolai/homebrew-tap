@@ -1,13 +1,13 @@
 cask "vmark" do
-  version "0.3.27"
+  version "0.3.28"
 
   on_arm do
-    sha256 "b048019ad2856a190a36d6da67994ec0b3b3573862b016751292cf847998f887"
+    sha256 "923da3abd4e4f338fc96e583e87467956a83316c83e42ffafd99b7c114a1ae39"
     url "https://github.com/xiaolai/vmark/releases/download/v#{version}/VMark_#{version}_aarch64.dmg"
   end
 
   on_intel do
-    sha256 "79f67bafc3974ada5add7d8cdfbaec53d8840c718d17f3c0cbc801a425e823f5"
+    sha256 "c6a197fc00ad7d843408a00ff696a5fec9db49f4fb66c098f8110106c137c02b"
     url "https://github.com/xiaolai/vmark/releases/download/v#{version}/VMark_#{version}_x64.dmg"
   end
 
