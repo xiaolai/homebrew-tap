@@ -7,20 +7,20 @@ class Mecha < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/xiaolai/mecha.im/releases/download/v#{version}/mecha-darwin-arm64.tar.gz"
-      sha256 "017d85d960e0286dcce965eea37dbbdddc2d6a93939810d08090c2b75eb64e6e"
+      sha256 "b42746daf84fb8f059417e170a5ab5d63f83743e491b17d75d94dd85706a8ee9"
     else
       url "https://github.com/xiaolai/mecha.im/releases/download/v#{version}/mecha-darwin-x64.tar.gz"
-      sha256 "e3557fe1cc616c4669bd00efe1ff86f94b48919aed9eb6f1132be3ea401a31e4"
+      sha256 "d299a57c82fcc668ca4b169003b2e66fd6d9f55c3a2d703b2fa2ed4a64e3646a"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/xiaolai/mecha.im/releases/download/v#{version}/mecha-linux-arm64.tar.gz"
-      sha256 "168b35c321f61b98c528ad22bd40acd0b9eb2acc2a1676d63c6967d8af19c4de"
+      sha256 "3c698de9e06d796b0249e833a861642c774cf5655e405e601652657e51115430"
     else
       url "https://github.com/xiaolai/mecha.im/releases/download/v#{version}/mecha-linux-x64.tar.gz"
-      sha256 "03805bfc9ede73d174c09d28fdb3b28866ee33b6e27a7264bba8e457080971aa"
+      sha256 "f15a5681ecee61b90f719340ff08c0f9ada5c448aadd6a8777e6f338a433fbd5"
     end
   end
 
