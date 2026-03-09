@@ -26,8 +26,6 @@ class Mecha < Formula
 
   def install
     bin.install "mecha"
-    # SPA dashboard must live alongside the binary (mecha looks for <execPath>/spa/)
-    (bin/"spa").install Dir["spa/*"] if (buildpath/"spa").exist?
   end
 
   test do
