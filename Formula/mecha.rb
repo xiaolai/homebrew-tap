@@ -1,26 +1,26 @@
 class Mecha < Formula
   desc "Run an army of Claude Code bots on your machines"
   homepage "https://mecha.im"
-  version "0.2.11"
+  version "0.2.12"
   license "ISC"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/xiaolai/mecha.im/releases/download/v#{version}/mecha-darwin-arm64.tar.gz"
-      sha256 "ba9618d94e4a1ef098675751a787ef7cc9bddaae4f13156f5b9d52efb9a45703"
+      sha256 "83969c76d564383b3f8c3198ea14e0c3d6fd13b8af77bf4f22d3195d4fc0d47d"
     else
       url "https://github.com/xiaolai/mecha.im/releases/download/v#{version}/mecha-darwin-x64.tar.gz"
-      sha256 "16131d90cb284ebbfe1bea7fcba7f54a1a74e32ab3dde068b33df2357b76d37b"
+      sha256 "1a9556c38438cace7f81fb03c77e0738d9b32c5ea0feaab457887fb369c8e6a2"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/xiaolai/mecha.im/releases/download/v#{version}/mecha-linux-arm64.tar.gz"
-      sha256 "d6f7a0b8bc8e37d2acf8b97f4f86e07a56c1401eb25693f81438d235497a62e3"
+      sha256 "6a556821049525d3d3b1ffd27613ed06230bc5b8db11d171020bc8f00da338ec"
     else
       url "https://github.com/xiaolai/mecha.im/releases/download/v#{version}/mecha-linux-x64.tar.gz"
-      sha256 "8ce62acd19ced4c3e7109d4caf829e731d9f7ee313241b6137086bead60f27b4"
+      sha256 "50b39d031fe5717236a6f00146250f8d225ce133534b26ab0368a393b8e6def5"
     end
   end
 
