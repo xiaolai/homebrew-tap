@@ -1,26 +1,26 @@
 class Mecha < Formula
-  desc "Run an army of Claude Code bots on your machines"
+  desc "Event-driven agentic workflow engine"
   homepage "https://mecha.im"
-  version "4.1.14"
+  version "0.5.10"
   license "ISC"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/xiaolai/mecha.im/releases/download/v#{version}/mecha-darwin-arm64.tar.gz"
-      sha256 "55233f91d44abb2bcdba3be794e27787897bf2c73f40dda231bb048cd7dfb422"
+      sha256 "15e74ea6a80d3100606e0c9f24d86e12197ce9b1b3648cbbede11c4cdd91d4bb"
     else
-      url "https://github.com/xiaolai/mecha.im/releases/download/v#{version}/mecha-darwin-x64.tar.gz"
-      sha256 "9c3abbf7c58983320b5cddf1971334ec3993d054969b71720a8fa2e02424389e"
+      url "https://github.com/xiaolai/mecha.im/releases/download/v#{version}/mecha-darwin-amd64.tar.gz"
+      sha256 "f7c06066327f4c9dfdfcf7497d7391ecc9e7df01d6da23a193be6030374969ac"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/xiaolai/mecha.im/releases/download/v#{version}/mecha-linux-arm64.tar.gz"
-      sha256 "659a35fa220876be6d62b3b99d29728eea32386412849b8cd23998a4cfe433dc"
+      sha256 "c91e3afc44bb09f572e660a8aae367aae6626086781434473b602b93887408f3"
     else
-      url "https://github.com/xiaolai/mecha.im/releases/download/v#{version}/mecha-linux-x64.tar.gz"
-      sha256 "850e5f32a9d2644280fa35ce4cfc2e36635c876cd710ddab77fe70d965e05b2c"
+      url "https://github.com/xiaolai/mecha.im/releases/download/v#{version}/mecha-linux-amd64.tar.gz"
+      sha256 "f9255a6d75d72be554235a0052fd90713e58b7b86a246db1d4018b4e49fb02cc"
     end
   end
 
@@ -29,6 +29,6 @@ class Mecha < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/mecha --version")
+    assert_match version.to_s, shell_output("#{bin}/mecha version")
   end
 end
