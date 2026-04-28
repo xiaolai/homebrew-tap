@@ -5,18 +5,15 @@ cask "claudepot" do
     sha256 "7bbb08aefeb5471b3f9c0f401255f95c536276cfc2380d0ff1baf9432bb4004c"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-aarch64.dmg"
-
-    binary "#{appdir}/Claudepot.app/Contents/MacOS/claudepot-cli-aarch64-apple-darwin",
-           target: "claudepot"
   end
   on_intel do
     sha256 "7a34a31a7c226c3cb02041d5e3413b125a1d230ad0d8b1c5cfb4068ff3b5a11b"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-x86_64.dmg"
-
-    binary "#{appdir}/Claudepot.app/Contents/MacOS/claudepot-cli-x86_64-apple-darwin",
-           target: "claudepot"
   end
+
+  binary "#{appdir}/Claudepot.app/Contents/MacOS/claudepot-cli",
+         target: "claudepot"
 
   name "Claudepot"
   desc "Multi-account Claude Code / Claude Desktop switcher"
