@@ -1,13 +1,13 @@
 cask "claudepot" do
-  version "0.1.6"
+  version "0.1.7"
 
   on_arm do
-    sha256 "e19007439f498e12ca98b5eef9dccde666e77baa5107a5f1f76afafac1febf9a"
+    sha256 "4fda47ce08505cab3783691ae6290038779c2ca12f69776569dc405dd8108103"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-aarch64.dmg"
   end
   on_intel do
-    sha256 "20b154265198fe755c0d9944d121166ce221f1698c1f74f04bfd06e07a11d143"
+    sha256 "82e33294fc75254a50f9d299d6c2cfe617ca08a1d9c4d505913e8492618affb6"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-x86_64.dmg"
   end
@@ -17,10 +17,10 @@ cask "claudepot" do
 
   name "Claudepot"
   desc "Multi-account Claude Code / Claude Desktop switcher"
-  homepage "https://github.com/xiaolai/claudepot-app"
+  homepage "https://claudepot.com/app/"
 
   livecheck do
-    url :homepage
+    url "https://github.com/xiaolai/claudepot-app"
     strategy :github_latest
   end
 
