@@ -9,10 +9,10 @@ class Claudepot < Formula
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/claudepot-aarch64-linux.tar.gz"
-      sha256 "b10948abc3c8db472313d32b5e2f7a319e22ad7c5d8432ea6f741ad14d687a07"
+      sha256 "a6c3314444099220818657ee805aa229db5745ad32c4098ced2715ce64384f0e"
     else
       url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/claudepot-x86_64-linux.tar.gz"
-      sha256 "d7fc8ed5a8756cc9fa5922cb22fcbcff5e4cab359d0f17748ee8db0d72aa48d4"
+      sha256 "69749fe30b324ef599d246847565407f83d1ee95de97b06922b860c035d106ca"
     end
   end
 
