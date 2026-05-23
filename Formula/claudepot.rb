@@ -1,7 +1,7 @@
 class Claudepot < Formula
   desc "Multi-account Claude Code / Claude Desktop switcher (CLI)"
   homepage "https://claudepot.com/app/"
-  version "0.1.29"
+  version "0.1.41"
   license "MIT"
 
   depends_on :linux
@@ -9,10 +9,10 @@ class Claudepot < Formula
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/claudepot-aarch64-linux.tar.gz"
-      sha256 "93be2cde9d762bcc0b046492a54c4196391dfd6725639dd9cbe5ce69b4a71397"
+      sha256 "b10948abc3c8db472313d32b5e2f7a319e22ad7c5d8432ea6f741ad14d687a07"
     else
       url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/claudepot-x86_64-linux.tar.gz"
-      sha256 "0dafeeb5231263ed86668ed1c062a850cd8854fd94603afad5d881f9e653f697"
+      sha256 "d7fc8ed5a8756cc9fa5922cb22fcbcff5e4cab359d0f17748ee8db0d72aa48d4"
     end
   end
 
