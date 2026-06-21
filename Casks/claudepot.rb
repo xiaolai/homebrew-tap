@@ -1,25 +1,23 @@
 cask "claudepot" do
-  version "0.1.50"
+  version "0.1.51"
 
   on_arm do
-    sha256 "5eace57afcc72f0da934970dfdd74bd7cf1b23574bd638693fba0677fa1109bf"
+    sha256 "1c2119262edd4910a1a70e6c8c335c5717497a6212e7e4496c700ce2423c68c7"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-aarch64.dmg"
   end
   on_intel do
-    sha256 "b5ff5cce33187bd8f67ba13e283b2c7f71cde6dee869a0c92569e22037e911e0"
+    sha256 "aad36f0499099235852199179f43af3f045f367d8b8cd2bfbbc088f4c5de132e"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-x86_64.dmg"
   end
 
+  binary "#{appdir}/Claudepot.app/Contents/MacOS/claudepot-cli",
+         target: "claudepot"
+
   name "Claudepot"
   desc "Multi-account Claude Code / Claude Desktop switcher"
   homepage "https://claudepot.com/app/"
-
-  livecheck do
-    url "https://github.com/xiaolai/claudepot-app"
-    strategy :github_latest
-  end
 
   # The app self-updates in place (Settings → About), so the
   # Caskroom version goes stale by design. auto_updates makes
@@ -27,11 +25,15 @@ cask "claudepot" do
   # reinstalls), so brew can't downgrade a self-updated app
   # when the tap lags a release.
   auto_updates true
-  depends_on macos: :catalina
+
+  livecheck do
+    url "https://github.com/xiaolai/claudepot-app"
+    strategy :github_latest
+  end
+
+  depends_on macos: ">= :catalina"
 
   app "Claudepot.app"
-  binary "#{appdir}/Claudepot.app/Contents/MacOS/claudepot-cli",
-         target: "claudepot"
 
   zap trash: [
     "~/.claudepot",
