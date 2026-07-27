@@ -1,20 +1,26 @@
 class Claudepot < Formula
   desc "Multi-account Claude Code / Claude Desktop switcher (CLI)"
   homepage "https://claudepot.com/app/"
-  version "0.3.1"
+  version "0.3.3"
   license "MIT"
 
-  # url/sha256 must be top level, not inside `on_linux`. Homebrew
-  # evaluates the DSL at LOAD time on every platform and requires a url
-  # unconditionally, so nesting them made this formula fail to load on
-  # macOS with "formula requires at least a URL". `depends_on :linux` is
-  # what keeps it from installing there.
+  # url/sha256 MUST be set at the top level, not inside an
+  # `on_linux do` block. Homebrew evaluates the formula DSL at
+  # LOAD time on every platform and requires a url
+  # unconditionally — with the stanzas nested in `on_linux`,
+  # loading on macOS raised
+  #   "claudepot: formula requires at least a URL"
+  # and every `brew` command touching the bare name
+  # `claudepot` printed that error before falling through to
+  # the cask. `Hardware::CPU.arm?` evaluates fine on macOS, so
+  # the conditional is safe here; `depends_on :linux` is what
+  # actually prevents installing it on a Mac.
   if Hardware::CPU.arm?
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/claudepot-aarch64-linux.tar.gz"
-    sha256 "9bdab875bf078d66c30810969cdc0b08525428b5f29057a8cb9f2c854dc34749"
+    sha256 "2d8d976eaaf8bf14338eaf27b244064ba38fe1985b6e4aa551f9b8d9124b1e96"
   else
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/claudepot-x86_64-linux.tar.gz"
-    sha256 "636fde0e5a787f17283620045ef4caebcc66f4e078d754f08fb6094dc753943e"
+    sha256 "153892d8dd1f2d8683c1464809f96bd8caf2f173e08678dc1a115e484d72a8f2"
   end
 
   depends_on :linux

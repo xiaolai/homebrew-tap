@@ -1,13 +1,13 @@
 cask "claudepot" do
-  version "0.3.1"
+  version "0.3.3"
 
   on_arm do
-    sha256 "3fc04fe1006380c5199dbf4e82f2ccfb1dce0ed189179baec70c827be321c4ff"
+    sha256 "1962f18cdeb06cdb6b1facef666f443488449094b3ffb3b2ddc07b980ab0f36e"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-aarch64.dmg"
   end
   on_intel do
-    sha256 "30e9d948b78a4e8c60a9593399d266be56c557d26414f672e242102f521e6e22"
+    sha256 "66c8838466cd74dc1f3ff3e19e7cbb47044bf06677a6141a70a2b09c60161f6b"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-x86_64.dmg"
   end
@@ -31,6 +31,10 @@ cask "claudepot" do
     strategy :github_latest
   end
 
+  # Symbol form, not the string ">= :catalina". Homebrew
+  # deprecated string comparison for `depends_on macos:` and
+  # warns on every command that loads the cask; the bare symbol
+  # already means "this version or newer".
   depends_on macos: :catalina
 
   app "Claudepot.app"
