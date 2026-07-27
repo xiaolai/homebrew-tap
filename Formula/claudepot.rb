@@ -4,17 +4,20 @@ class Claudepot < Formula
   version "0.3.1"
   license "MIT"
 
-  depends_on :linux
-
-  on_linux do
-    if Hardware::CPU.arm?
-      url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/claudepot-aarch64-linux.tar.gz"
-      sha256 "9bdab875bf078d66c30810969cdc0b08525428b5f29057a8cb9f2c854dc34749"
-    else
-      url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/claudepot-x86_64-linux.tar.gz"
-      sha256 "636fde0e5a787f17283620045ef4caebcc66f4e078d754f08fb6094dc753943e"
-    end
+  # url/sha256 must be top level, not inside `on_linux`. Homebrew
+  # evaluates the DSL at LOAD time on every platform and requires a url
+  # unconditionally, so nesting them made this formula fail to load on
+  # macOS with "formula requires at least a URL". `depends_on :linux` is
+  # what keeps it from installing there.
+  if Hardware::CPU.arm?
+    url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/claudepot-aarch64-linux.tar.gz"
+    sha256 "9bdab875bf078d66c30810969cdc0b08525428b5f29057a8cb9f2c854dc34749"
+  else
+    url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/claudepot-x86_64-linux.tar.gz"
+    sha256 "636fde0e5a787f17283620045ef4caebcc66f4e078d754f08fb6094dc753943e"
   end
+
+  depends_on :linux
 
   def install
     bin.install "claudepot"
