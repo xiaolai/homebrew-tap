@@ -1,7 +1,7 @@
 class Claudepot < Formula
   desc "Multi-account Claude Code / Claude Desktop switcher (CLI)"
   homepage "https://claudepot.com/app/"
-  version "0.4.10"
+  version "0.4.11"
   license "MIT"
 
   # url/sha256 MUST be set at the top level, not inside an
@@ -17,10 +17,10 @@ class Claudepot < Formula
   # actually prevents installing it on a Mac.
   if Hardware::CPU.arm?
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/claudepot-aarch64-linux.tar.gz"
-    sha256 "5791cc88483fb1801490dea64db8982064ebce3785c98846c84503a0a84c8248"
+    sha256 "e8b82ba9abb663f042943ca1c0d2f0515b656bbd7ced249276781dc6bcccce95"
   else
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/claudepot-x86_64-linux.tar.gz"
-    sha256 "bf42cba7faee2da2f89337b6d3f1438aed3c96a725c78e83d328e856e14646e0"
+    sha256 "98d3f880114d16ec2b2b4329a4c64ac2bd4e258b763c76e2210df24d90166e3f"
   end
 
   depends_on :linux
