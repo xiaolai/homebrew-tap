@@ -1,13 +1,13 @@
 cask "claudepot" do
-  version "0.4.19"
+  version "0.5.0"
 
   on_arm do
-    sha256 "11867ffb824cb612d47ce9e9dc5acc3e7f7086c79dda671abf40d71a567b0d93"
+    sha256 "8aba3a0af74667b8e2ecb621569f6dd91fa726280d4f0a260666b9f0d0f3e921"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-aarch64.dmg"
   end
   on_intel do
-    sha256 "b61e69046fa30fbff6fde3dae72f2dc97f2b3fe6198bdb91d22066c2cb425da8"
+    sha256 "3048735ad44d0a74f6c174c59e8854723d09f9736fc5f1080855e0ddfa95c429"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-x86_64.dmg"
   end
