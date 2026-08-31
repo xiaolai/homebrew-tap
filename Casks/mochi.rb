@@ -1,13 +1,13 @@
 cask "mochi" do
-  version "0.1.8"
+  version "0.1.9"
 
   on_arm do
-    sha256 "9d6fae5f19580185469c823d5828d81ce4a42ae1d0b1c48e4d1b48c2e5e79ecf"
+    sha256 "f78bbb0ebad1d924732000ad82c9d60495e2739af5759264a62182008644c75f"
 
     url "https://github.com/xiaolai/mochi/releases/download/v#{version}/Mochi-#{version}-arm64.dmg"
   end
   on_intel do
-    sha256 "ae89b573be2ba23d6607bce2f09df194233e55bd3f12c60b8e250452078ac13b"
+    sha256 "a612135fc71bff4942f9024fa0191e357e753aebfff10be805b068dda1ffea64"
 
     url "https://github.com/xiaolai/mochi/releases/download/v#{version}/Mochi-#{version}-x64.dmg"
   end
