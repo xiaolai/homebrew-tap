@@ -8,7 +8,7 @@ cask "cubus" do
   homepage "https://github.com/xiaolai/cubus"
 
   # One universal binary covers both architectures, so there is no arch split here.
-  # No auto_updates: the app does not update itself, so plain `brew upgrade` is correct for it.
+  # No auto_updates: the app does not update itself, so plain `brew upgrade` is correct.
   depends_on macos: :ventura
 
   app "cubus.app"
