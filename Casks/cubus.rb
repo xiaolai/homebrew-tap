@@ -1,6 +1,6 @@
 cask "cubus" do
-  version "0.2.2"
-  sha256 "193594de7e363cdc13493d018ae38f720813581b4ceb1c6242d6c35060a915ba"
+  version "0.2.3"
+  sha256 "5039e3b36416a4675dffb0f01e58ec80a5789db9ebf7a1dda05a96b23de9d569"
 
   url "https://github.com/xiaolai/cubus/releases/download/v#{version}/cubus_#{version}_universal.dmg"
   name "cubus"
@@ -8,7 +8,14 @@ cask "cubus" do
   homepage "https://github.com/xiaolai/cubus"
 
   # One universal binary covers both architectures, so there is no arch split here.
-  # No auto_updates: the app does not update itself, so plain `brew upgrade` is correct.
+  #
+  # NO auto_updates, deliberately, and it is the macOS update story rather than an
+  # omission: Homebrew is in charge here, so `brew upgrade` keeps moving cubus exactly
+  # as it always has. The app's own updater (tauri-plugin-updater) is compiled only for
+  # Windows and Linux — see SELF_UPDATE_PLATFORMS in apps/web/lib/app-update.js — because
+  # a cask and a self-updater both write to this same bundle while only one of them knows
+  # what is really there. Declaring auto_updates would tell brew to stand down and hand
+  # the job to an updater macOS does not have.
   depends_on macos: :ventura
 
   app "cubus.app"
