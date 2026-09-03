@@ -1,6 +1,6 @@
 cask "cubus" do
-  version "0.2.3"
-  sha256 "5039e3b36416a4675dffb0f01e58ec80a5789db9ebf7a1dda05a96b23de9d569"
+  version "0.2.4"
+  sha256 "ec47cea0e860dd2ee67067ad3f2b227a6ab47456da672c739c4c1531ba5103f0"
 
   url "https://github.com/xiaolai/cubus/releases/download/v#{version}/cubus_#{version}_universal.dmg"
   name "cubus"
@@ -9,13 +9,18 @@ cask "cubus" do
 
   # One universal binary covers both architectures, so there is no arch split here.
   #
-  # NO auto_updates, deliberately, and it is the macOS update story rather than an
-  # omission: Homebrew is in charge here, so `brew upgrade` keeps moving cubus exactly
-  # as it always has. The app's own updater (tauri-plugin-updater) is compiled only for
-  # Windows and Linux — see SELF_UPDATE_PLATFORMS in apps/web/lib/app-update.js — because
-  # a cask and a self-updater both write to this same bundle while only one of them knows
-  # what is really there. Declaring auto_updates would tell brew to stand down and hand
-  # the job to an updater macOS does not have.
+  # NO auto_updates, deliberately, and it means BOTH paths work rather than neither.
+  #
+  # The app does update itself on macOS (tauri-plugin-updater; see SELF_UPDATE_PLATFORMS
+  # in apps/web/lib/app-update.js). Declaring auto_updates would tell Homebrew to stand
+  # down and leave the app as the only way, and plenty of people manage their Mac with
+  # `brew upgrade` and expect it to keep working. Left off, both do.
+  #
+  # The two do not fight, because they move together: each follows the same GitHub
+  # releases, and this workflow runs on `release: published` — within seconds of the
+  # manifest the app reads. So `brew upgrade` reinstalls the version the app already
+  # has, which is a redundant copy rather than a downgrade. The downgrade worth fearing
+  # needs the cask to LAG the app, and that is a property of a tap that updates late.
   depends_on macos: :ventura
 
   app "cubus.app"
