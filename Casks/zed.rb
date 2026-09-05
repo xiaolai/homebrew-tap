@@ -12,14 +12,13 @@ cask "zed" do
     strategy :github_latest
   end
 
-  # Same app name, bundle id and CLI as the official cask, so the two cannot
-  # coexist: whichever is installed second would overwrite the first's files.
-  conflicts_with cask: "zed"
-
   # No auto_updates stanza on purpose. The in-app updater is disabled at compile
   # time, because upstream's would replace this build with official Zed, so
   # `brew upgrade` is the only update path and Homebrew must not skip it.
-  depends_on macos: ">= :big_sur"
+  # Shares the token "zed" with the official cask, so there is only ever one
+  # Caskroom entry and installing this replaces it. A bare `brew install zed`
+  # still resolves to homebrew/cask; this one needs its full name.
+  depends_on macos: :big_sur
   depends_on arch: :arm64
 
   app "Zed.app"
