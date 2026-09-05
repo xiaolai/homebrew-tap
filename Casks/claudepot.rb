@@ -31,11 +31,13 @@ cask "claudepot" do
     strategy :github_latest
   end
 
-  # Symbol form, not the string ">= :catalina". Homebrew
-  # deprecated string comparison for `depends_on macos:` and
-  # warns on every command that loads the cask; the bare symbol
-  # already means "this version or newer".
-  depends_on macos: :catalina
+  # Symbol form, not the string ">= :big_sur". Homebrew deprecated string
+  # comparison for `depends_on macos:`; the bare symbol already means "this
+  # version or newer". The floor was :catalina until Homebrew dropped that
+  # symbol outright, which made every command that loaded this tap fail --
+  # :big_sur is the oldest version still expressible, and Homebrew itself no
+  # longer runs on anything older.
+  depends_on macos: :big_sur
 
   app "Claudepot.app"
 
