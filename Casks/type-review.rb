@@ -15,7 +15,7 @@ cask "type-review" do
   # arm64 only. There is no universal binary: `make` builds for the machine it
   # runs on, and this release was cut on Apple silicon.
   depends_on arch: :arm64
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "TYPE.app"
 
