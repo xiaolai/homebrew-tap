@@ -1,13 +1,13 @@
 cask "claudepot" do
-  version "0.6.3"
+  version "0.6.4"
 
   on_arm do
-    sha256 "f87ffd206220c062134cbd46c52279b7bb694be894ee5e7487d264c3183c5aee"
+    sha256 "c9d13a35129e001d316ca349e0958b2036758e5ba523513f5df711277620cc20"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-aarch64.dmg"
   end
   on_intel do
-    sha256 "7d0f9c1a6e7a9763e59dbd7dc4519a832ca094bd408cad68b91396769f6f2c33"
+    sha256 "856f1d968d24cee074a37b4eb7c5cf684aa3799bd11b96754c77f739ffc4d55e"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-x86_64.dmg"
   end
@@ -31,13 +31,11 @@ cask "claudepot" do
     strategy :github_latest
   end
 
-  # Symbol form, not the string ">= :big_sur". Homebrew deprecated string
-  # comparison for `depends_on macos:`; the bare symbol already means "this
-  # version or newer". The floor was :catalina until Homebrew dropped that
-  # symbol outright, which made every command that loaded this tap fail --
-  # :big_sur is the oldest version still expressible, and Homebrew itself no
-  # longer runs on anything older.
-  depends_on macos: :big_sur
+  # Symbol form, not the string ">= :catalina". Homebrew
+  # deprecated string comparison for `depends_on macos:` and
+  # warns on every command that loads the cask; the bare symbol
+  # already means "this version or newer".
+  depends_on macos: :catalina
 
   app "Claudepot.app"
 
