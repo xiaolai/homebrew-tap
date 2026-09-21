@@ -1,6 +1,6 @@
 cask "type-review" do
-  version "1.1.3"
-  sha256 "82d8a1084394c9a274eab3466a4bb87bb2454a0e2d05958d1024d59ab2df1166"
+  version "1.1.4"
+  sha256 "1ea9255d88d9222d1d244f86974855fe45ddc0aa66e351e80f32441dc559635c"
 
   url "https://github.com/xiaolai/type-review-app-macos/releases/download/v#{version}/TYPE-#{version}-direct.zip"
   name "TYPE"
