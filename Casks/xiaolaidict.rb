@@ -1,6 +1,6 @@
 cask "xiaolaidict" do
-  version "0.0.3"
-  sha256 "9ad8dbe84c5c8265dba4f33f6ddde4c2c33f695b93146306bea2f77d2fd6596f"
+  version "0.0.4"
+  sha256 "0c14c83285b094d39e0c5837ec1f78041170f4263285ea285b1d39b23b256a01"
 
   url "https://github.com/xiaolai/XiaolaiDict/releases/download/v#{version}/XiaolaiDict-#{version}.dmg"
   name "XiaolaiDict"
