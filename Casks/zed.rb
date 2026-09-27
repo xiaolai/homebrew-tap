@@ -18,8 +18,10 @@ cask "zed" do
   # Shares the token "zed" with the official cask, so there is only ever one
   # Caskroom entry and installing this replaces it. A bare `brew install zed`
   # still resolves to homebrew/cask; this one needs its full name.
-  depends_on macos: :big_sur
+  # No minimum macOS version either: the `:big_sur` floor it carried is
+  # Homebrew's own oldest known release, so it excluded nobody.
   depends_on arch: :arm64
+  depends_on :macos
 
   app "Zed.app"
   binary "#{appdir}/Zed.app/Contents/MacOS/cli", target: "zed"

@@ -12,12 +12,14 @@ cask "claudepot" do
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-x86_64.dmg"
   end
 
-  binary "#{appdir}/Claudepot.app/Contents/MacOS/claudepot-cli",
-         target: "claudepot"
-
   name "Claudepot"
   desc "Multi-account Claude Code / Claude Desktop switcher"
   homepage "https://claudepot.com/app/"
+
+  livecheck do
+    url "https://github.com/xiaolai/claudepot-app"
+    strategy :github_latest
+  end
 
   # The app self-updates in place (Settings → About), so the
   # Caskroom version goes stale by design. auto_updates makes
@@ -25,19 +27,14 @@ cask "claudepot" do
   # reinstalls), so brew can't downgrade a self-updated app
   # when the tap lags a release.
   auto_updates true
-
-  livecheck do
-    url "https://github.com/xiaolai/claudepot-app"
-    strategy :github_latest
-  end
-
-  # Symbol form, not the string ">= :catalina". Homebrew
-  # deprecated string comparison for `depends_on macos:` and
-  # warns on every command that loads the cask; the bare symbol
-  # already means "this version or newer".
-  depends_on macos: :catalina
+  # No minimum macOS version, because none could exclude anybody: the oldest
+  # release Homebrew itself knows a symbol for is Big Sur, so the `:catalina`
+  # floor this used to carry was redundant and `brew style` removes it.
+  depends_on :macos
 
   app "Claudepot.app"
+  binary "#{appdir}/Claudepot.app/Contents/MacOS/claudepot-cli",
+         target: "claudepot"
 
   zap trash: [
     "~/.claudepot",

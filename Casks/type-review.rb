@@ -5,7 +5,7 @@ cask "type-review" do
   url "https://github.com/xiaolai/type-review-app-macos/releases/download/v#{version}/TYPE-#{version}-direct.zip"
   name "TYPE"
   desc "Typing practice that adapts to the keys you miss"
-  homepage "https://type.review"
+  homepage "https://type.review/"
 
   livecheck do
     url :url
