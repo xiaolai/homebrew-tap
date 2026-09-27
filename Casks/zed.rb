@@ -9,6 +9,9 @@ cask "zed" do
 
   livecheck do
     url :homepage
+    # The default regex stops at the hyphen, so it reads v1.20.0-fork.1 as
+    # 1.20.0 and audit reports the cask as out of step with its own release.
+    regex(/^v?(\d+(?:\.\d+)+-fork\.\d+)$/i)
     strategy :github_latest
   end
 
