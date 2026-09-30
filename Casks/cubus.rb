@@ -1,6 +1,6 @@
 cask "cubus" do
-  version "0.7.8"
-  sha256 "7eab9ebd77e549304559d8976cb85db9394f17e199f8bb4b0616da7bc77740de"
+  version "0.7.9"
+  sha256 "1452f2fde6b4fa3baf4ef9c8fb47c806d5591b324f01f509eae15b85b35607de"
 
   url "https://github.com/xiaolai/cubus/releases/download/v#{version}/cubus_#{version}_universal.dmg"
   name "cubus"
