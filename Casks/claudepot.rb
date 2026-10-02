@@ -1,25 +1,23 @@
 cask "claudepot" do
-  version "0.6.6"
+  version "0.6.7"
 
   on_arm do
-    sha256 "6cc96d6ee2b84233c1ab0aef10e87c6f554a282e6c0b4907879bc88c45ccdb72"
+    sha256 "7702e95842bbad2aefc38c547e71da6bbe91716fdca5dac4790f50a38444b4d0"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-aarch64.dmg"
   end
   on_intel do
-    sha256 "f0476dabe1429d3a905e55a32f6a67c08a92c2be8890847ed395a28353ce6831"
+    sha256 "a12aa2b93ef59f6e090f5b0d63386929988d7a1983f9b1d282117e4e84ef7030"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-x86_64.dmg"
   end
 
+  binary "#{appdir}/Claudepot.app/Contents/MacOS/claudepot-cli",
+         target: "claudepot"
+
   name "Claudepot"
   desc "Multi-account Claude Code / Claude Desktop switcher"
   homepage "https://claudepot.com/app/"
-
-  livecheck do
-    url "https://github.com/xiaolai/claudepot-app"
-    strategy :github_latest
-  end
 
   # The app self-updates in place (Settings → About), so the
   # Caskroom version goes stale by design. auto_updates makes
@@ -27,14 +25,19 @@ cask "claudepot" do
   # reinstalls), so brew can't downgrade a self-updated app
   # when the tap lags a release.
   auto_updates true
-  # No minimum macOS version, because none could exclude anybody: the oldest
-  # release Homebrew itself knows a symbol for is Big Sur, so the `:catalina`
-  # floor this used to carry was redundant and `brew style` removes it.
-  depends_on :macos
+
+  livecheck do
+    url "https://github.com/xiaolai/claudepot-app"
+    strategy :github_latest
+  end
+
+  # Symbol form, not the string ">= :catalina". Homebrew
+  # deprecated string comparison for `depends_on macos:` and
+  # warns on every command that loads the cask; the bare symbol
+  # already means "this version or newer".
+  depends_on macos: :catalina
 
   app "Claudepot.app"
-  binary "#{appdir}/Claudepot.app/Contents/MacOS/claudepot-cli",
-         target: "claudepot"
 
   zap trash: [
     "~/.claudepot",

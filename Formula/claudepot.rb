@@ -1,11 +1,7 @@
 class Claudepot < Formula
   desc "Multi-account Claude Code / Claude Desktop switcher (CLI)"
   homepage "https://claudepot.com/app/"
-  # A constant, not a `version` stanza: the URLs below are built from it, and
-  # `brew audit` rejects a `version` whose value it can already scan out of the
-  # interpolated URL. Brew derives the version from the URL instead, so this
-  # stays the single place to bump.
-  VERSION = "0.6.6".freeze
+  version "0.6.7"
   license "MIT"
 
   # url/sha256 MUST be set at the top level, not inside an
@@ -20,11 +16,11 @@ class Claudepot < Formula
   # the conditional is safe here; `depends_on :linux` is what
   # actually prevents installing it on a Mac.
   if Hardware::CPU.arm?
-    url "https://github.com/xiaolai/claudepot-app/releases/download/v#{VERSION}/claudepot-aarch64-linux.tar.gz"
-    sha256 "5a309b38d6085b0ed80bbc64b1630653e053a5c9e78decf51f7acc62d4227a08"
+    url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/claudepot-aarch64-linux.tar.gz"
+    sha256 "08862889a4b8a8fb9310632e3d3e8746b3656f0bf3aebe7658efeb4330833899"
   else
-    url "https://github.com/xiaolai/claudepot-app/releases/download/v#{VERSION}/claudepot-x86_64-linux.tar.gz"
-    sha256 "b0efa314e196dd7752b3fd97e14618ef9fa537661d317fc7d5ed5daaf93fbc6a"
+    url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/claudepot-x86_64-linux.tar.gz"
+    sha256 "ea7f999302c50ba0545499adae94ed2f98dd332af29c8108b449b1b83055a86a"
   end
 
   depends_on :linux
