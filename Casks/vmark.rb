@@ -1,13 +1,13 @@
 cask "vmark" do
-  version "0.9.91"
+  version "0.9.92"
 
   on_arm do
-    sha256 "8fb42073ffeb88afc3467cd615bda2d9717ae18530a37bd3d48b2c45eee702e0"
+    sha256 "14144c7df5a457c5c2c6c871a9a41cde3325805a4c3ea2f2deb6e2a831c8ec2f"
     url "https://github.com/xiaolai/vmark/releases/download/v#{version}/VMark_#{version}_aarch64.dmg"
   end
 
   on_intel do
-    sha256 "5d7f13d9780495e6f4757075df4e153bec7ef3c2c8535025f56c11c26d34b06c"
+    sha256 "b26826e9568643c884d3f4f3c0adcd566a795463d5bc5c6982bbf0f17261ef73"
     url "https://github.com/xiaolai/vmark/releases/download/v#{version}/VMark_#{version}_x64.dmg"
   end
 
@@ -24,7 +24,7 @@ cask "vmark" do
   # :ventura (13.0) while the real floor is 13.4 — see
   # scripts/check-webview-floor.mjs. The precise gate stays
   # LSMinimumSystemVersion from tauri.conf.json, which refuses to
-  # open with a readable message; this line keeps  from
+  # open with a readable message; this line keeps `brew install` from
   # cheerfully installing onto Catalina, which it did until #1278.
   depends_on macos: :ventura
 
