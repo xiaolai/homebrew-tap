@@ -1,11 +1,11 @@
 cask "type-review" do
-  version "1.1.5"
-  sha256 "8d543c7c976632ce0b56b41f31488e7435c21c1900b08c10ea6bbbf7a827138f"
+  version "1.1.6"
+  sha256 "669fc00cc5b2c7d3ff11f893e1d55ec11f95bb7f359d9a2bd07050f9da9f6d0f"
 
   url "https://github.com/xiaolai/type-review-app-macos/releases/download/v#{version}/TYPE-#{version}-direct.zip"
   name "TYPE"
   desc "Typing practice that adapts to the keys you miss"
-  homepage "https://type.review/"
+  homepage "https://type.review"
 
   livecheck do
     url :url
