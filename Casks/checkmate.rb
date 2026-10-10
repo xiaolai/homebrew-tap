@@ -1,6 +1,6 @@
 cask "checkmate" do
-  version "0.3.2"
-  sha256 "e4a58d3dd78d5513466501da80c7595c7966973a0bc353cbf904d7aee9ac9e44"
+  version "0.3.3"
+  sha256 "809339de3c98938fb5fc0904ce61c28f4daa5671977af0d2e9cfedff92371955"
 
   url "https://github.com/xiaolai/checkmate/releases/download/v#{version}/Checkmate-#{version}.dmg"
   name "Checkmate"
@@ -12,8 +12,7 @@ cask "checkmate" do
     strategy :github_latest
   end
 
-  depends_on arch: :arm64
-  depends_on macos: :golden_gate
+  depends_on macos: :sonoma
 
   app "Checkmate.app"
 end
