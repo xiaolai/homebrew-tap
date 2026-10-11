@@ -1,6 +1,6 @@
 cask "checkmate" do
-  version "0.3.6"
-  sha256 "6207235083c949c7d971c96123bbfd1dc78c901047d747a3fc2ee3d3ad2bfd32"
+  version "0.4.0"
+  sha256 "8b53ec1c53dc4f1e11584609ef43dfa9d0a3dede492ecd5ce352df802acb5463"
 
   url "https://github.com/xiaolai/checkmate/releases/download/v#{version}/Checkmate-#{version}.dmg"
   name "Checkmate"
@@ -15,4 +15,9 @@ cask "checkmate" do
   depends_on macos: :sonoma
 
   app "Checkmate.app"
+
+  zap trash: [
+    "~/Library/Application Support/ai.xiaolai.checkmate",
+    "~/.codex/skills/checkmate-companion",
+  ]
 end
