@@ -5,26 +5,26 @@ class Recite < Formula
   homepage "https://github.com/xiaolai/recite"
   # A constant, not a `version` stanza: the URLs are built from it, and `brew audit`
   # rejects a `version` it can already read from the URL.
-  VERSION = "0.1.0".freeze
+  VERSION = "0.2.0".freeze
   license "ISC"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/xiaolai/recite/releases/download/v#{VERSION}/recite-darwin-arm64.tar.gz"
-      sha256 "45b1d09f2e7eaf6fdb77f04a6c0b34b3869ce36630704d3a5e1941c30a50b66c"
+      sha256 "cf7025dc42fe06d3160472886886fa5b328b22ed63119df0817252c996f81c4a"
     else
       url "https://github.com/xiaolai/recite/releases/download/v#{VERSION}/recite-darwin-amd64.tar.gz"
-      sha256 "eb8dac26e60edbd3ece46cb11c2dc968b5a8aee6c920f6c6aec1438229d1dcb7"
+      sha256 "25ed0b90b14ce5e11f03511e8fc8aa03821c66146e41a3da26c366e896cc64c6"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/xiaolai/recite/releases/download/v#{VERSION}/recite-linux-arm64.tar.gz"
-      sha256 "8649edf374317de1ef833ef3270f2b01da9268de5e920ee4bf62ed53afeed3c3"
+      sha256 "7ca363874223562786f2ca6ed887c100b344eafd42fb732a02be1f3022a394e4"
     else
       url "https://github.com/xiaolai/recite/releases/download/v#{VERSION}/recite-linux-amd64.tar.gz"
-      sha256 "23971ec71f56d4d928f24e04da0ee7ad0978e1d22b0437f85b685c27a106f09d"
+      sha256 "9be5c27f94d42bca51aee98cab7b824bbc9040d2d8cdc2aa8c4515df102da4e1"
     end
   end
 
