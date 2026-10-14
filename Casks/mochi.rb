@@ -1,6 +1,6 @@
 cask "mochi" do
-  version "0.9.2"
-  sha256 "4afd6ec72fec5d06a7ea291bd2be88d83455b3f00c2ff9493dc9b8317ff6b591"
+  version "0.9.3"
+  sha256 "16499fb0f2105261ec6c986338088264f7cf03db7936aaf596c7eb3f0fc4bc9d"
 
   url "https://github.com/xiaolai/mochi-macOS/releases/download/v#{version}/Mochi-#{version}.dmg"
   name "Mochi"
