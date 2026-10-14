@@ -1,6 +1,6 @@
 cask "checkmate" do
-  version "0.7.4"
-  sha256 "649166544cc91db56556d9fd315f65d285573c1dee50b2d9903a00bcc3ee5c7e"
+  version "0.7.5"
+  sha256 "c8f6cc9e926cfd0dfdae409fc531d71eab04271cb1c3cb9e857a862cb52d05fa"
 
   url "https://github.com/xiaolai/checkmate/releases/download/v#{version}/Checkmate-#{version}.dmg"
   name "Checkmate"
