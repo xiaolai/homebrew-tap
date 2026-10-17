@@ -1,6 +1,6 @@
 cask "zed" do
-  version "1.20.0-fork.1"
-  sha256 "a0f82155afc10798905ea763197fab2ea0377f58e7dbedcda409d4a17d673a5a"
+  version "1.20.0-fork.2"
+  sha256 "8706c30109f83de1ba51c59bdb5d37a282b5d67c6732ef0db19158f96c3981b6"
 
   url "https://github.com/xiaolai/zed/releases/download/v#{version}/Zed-aarch64.dmg"
   name "Zed"
