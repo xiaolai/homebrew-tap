@@ -8,26 +8,26 @@ class Amgo < Formula
   homepage "https://github.com/xiaolai/amgo"
   # A constant, not a `version` stanza: the URLs are built from it, and `brew audit`
   # rejects a `version` it can already read from the URL.
-  VERSION = "0.4.0"
+  VERSION = "0.5.0"
   license "ISC"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/xiaolai/amgo/releases/download/v#{VERSION}/amgo-darwin-arm64.tar.gz"
-      sha256 "efa2b25d62c1338ff4ac679316c5298fbd89ade39ececf39a6facf1d00954372"
+      sha256 "760fabeaa20a9178602769a807c5e1626b48ffa4a9a2de66de11fdb96fbf16ef"
     else
       url "https://github.com/xiaolai/amgo/releases/download/v#{VERSION}/amgo-darwin-amd64.tar.gz"
-      sha256 "f029f6fbb20412cbc4c6195dd8c3a50d9766eece1d57d91aa0657892123318fc"
+      sha256 "b33d2874c2ea75b7dabc785d2a47026989151b3e1ff2e949599cd6572c04cbdd"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/xiaolai/amgo/releases/download/v#{VERSION}/amgo-linux-arm64.tar.gz"
-      sha256 "d3797b590379ceb765d17041a0dbc0fae174ed38bdf1ab0ace9f5eae264b9fda"
+      sha256 "24e365d376a3fd8f182e9f7b7f67f3b209a5bfacc064cccf0b1f2c11714ebdaa"
     else
       url "https://github.com/xiaolai/amgo/releases/download/v#{VERSION}/amgo-linux-amd64.tar.gz"
-      sha256 "056d37acaba929dc22caf5e6697e62f08f17b11eaea709b6e3e620523f8ec35e"
+      sha256 "4eebb8e6f77444701e25837099d1017a96df4ae7c97f7201cfb59ef6c1a5c423"
     end
   end
 
