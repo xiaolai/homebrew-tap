@@ -33,6 +33,7 @@ class Amgo < Formula
 
   def install
     bin.install "amgo"
+    doc.install "THIRD-PARTY-NOTICES.md"
   end
 
   test do
