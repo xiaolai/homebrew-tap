@@ -1,6 +1,6 @@
 cask "uniplayer" do
-  version "0.1.6"
-  sha256 "bd1d5ab70b53592ade8f04df0a7c478ce81a933f1f4b67942697984bd1225a9f"
+  version "0.1.7"
+  sha256 "e9d519ddb1ddd756e34ad5f2672c1954d38f16b4d8feda7fe6722e14f99e0444"
 
   url "https://github.com/xiaolai/uniplayer/releases/download/v#{version}/UniPlayer-#{version}-universal.dmg"
   name "UniPlayer"
