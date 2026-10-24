@@ -13,6 +13,7 @@ brew install --cask vmark          # or any cask listed below
 
 - **vmark** - A modern Markdown editor built with Tauri
 - **xiaolaidict** - A menu-bar dictionary for macOS (macOS 27+, Apple Silicon)
+- **sonovo** - A personal macOS workspace with media, documents, and tmux terminals (macOS 26+, Apple Silicon)
 
 - **mochi** - Native macOS English speaking practice with Codex Audio (macOS 14+, Apple Silicon)
 
