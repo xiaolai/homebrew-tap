@@ -5,7 +5,7 @@ cask "xdict" do
   url "https://github.com/xiaolai/xdict/releases/download/v#{version}/XDict-#{version}.dmg"
   name "XDict"
   desc "Menu-bar dictionary for the reader's own MDict (.mdx) files"
-  homepage "https://xdict.ai"
+  homepage "https://xdict.ai/"
 
   livecheck do
     url "https://github.com/xiaolai/xdict"
