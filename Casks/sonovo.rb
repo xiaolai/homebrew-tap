@@ -1,6 +1,6 @@
 cask "sonovo" do
-  version "0.5.7"
-  sha256 "77fbd2b6e5ac811293402d6e0250ad931b3e0393142d8672564971166b152001"
+  version "0.5.8"
+  sha256 "d80d806ef3fe535d86940fd9c5f242ca9b1a6ec1513d98c6640dea0ad650133c"
 
   url "https://github.com/xiaolai/sonovo/releases/download/v#{version}/Sonovo-#{version}.dmg"
   name "Sonovo"
@@ -13,7 +13,7 @@ cask "sonovo" do
   end
 
   depends_on arch: :arm64
-  depends_on macos: :tahoe
+  depends_on macos: :golden_gate
 
   app "Sonovo.app"
 
