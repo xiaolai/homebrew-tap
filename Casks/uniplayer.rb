@@ -1,6 +1,6 @@
 cask "uniplayer" do
-  version "0.2.2"
-  sha256 "307a2a58149dba209c5afbabfae051dbeb27a66a5ee7d754fb9d4b77df9d13a6"
+  version "0.2.3"
+  sha256 "6dfc5f526811a5c83c0bcad692f1f673bba015873900c4dfc17be2cd7b8f86b3"
 
   url "https://github.com/xiaolai/uniplayer/releases/download/v#{version}/UniPlayer-#{version}-universal.dmg"
   name "UniPlayer"
@@ -15,4 +15,5 @@ cask "uniplayer" do
   depends_on macos: :golden_gate
 
   app "UniPlayer.app"
+  app "UniPlayer HUD.app"
 end
