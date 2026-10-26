@@ -1,6 +1,6 @@
 cask "tsundoku" do
-  version "1.3.0"
-  sha256 "eaf5902a492ff0586ca89457b14e7b4b8bc1962b516fd7a527b46bcead90ca3e"
+  version "1.4.0"
+  sha256 "11dcd4be81c54f62528108ad641939a6fdaed8caf066c627ef9a4f279334dea3"
 
   url "https://github.com/xiaolai/tsundoku/releases/download/v#{version}/Tsundoku-#{version}.dmg"
   name "Tsundoku"
@@ -15,4 +15,5 @@ cask "tsundoku" do
   depends_on arch: :arm64
   depends_on macos: :sequoia
   app "Tsundoku.app"
+  uninstall quit: "com.lixiaolai.tsundoku"
 end
