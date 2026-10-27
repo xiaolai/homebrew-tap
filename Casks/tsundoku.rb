@@ -1,6 +1,6 @@
 cask "tsundoku" do
-  version "1.5.0"
-  sha256 "7f913065bf760fd9b669cee9fbadfa037dbabdb9c4050e89cd86706255c03483"
+  version "1.5.1"
+  sha256 "006301c12d03065a98d208d53151acd9e9ddb678d935351508c9ea6e35a480fe"
 
   url "https://github.com/xiaolai/tsundoku/releases/download/v#{version}/Tsundoku-#{version}.dmg"
   name "Tsundoku"
