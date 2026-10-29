@@ -1,6 +1,6 @@
 cask "xdict" do
-  version "0.5.0"
-  sha256 "cc0f3cee1da6d4dafc7182b0601c2620ca9f8c75976bc3598fdfe7162e9e9797"
+  version "0.6.1"
+  sha256 "72282d8739fe84ba2395c0e3183d5a456a1473defaad656c5ea2c5a336584372"
 
   url "https://github.com/xiaolai/xdict/releases/download/v#{version}/XDict-#{version}.dmg"
   name "XDict"
