@@ -1,6 +1,6 @@
 cask "sonovo" do
-  version "0.10.6"
-  sha256 "b8a53f5f61ab0818b2038175ffb15ae83c98ac284f7a157914521c1448fff934"
+  version "0.10.7"
+  sha256 "ae97d735bc762c232ac6fc21765a0e543890b6319f71d557a6a1af94b91bc336"
 
   url "https://github.com/xiaolai/sonovo/releases/download/v#{version}/Sonovo-#{version}.dmg"
   name "Sonovo"
