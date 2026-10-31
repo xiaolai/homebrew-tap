@@ -1,6 +1,6 @@
 cask "mogents" do
-  version "0.5.2"
-  sha256 "2fc561f9d0106509b8c43c794d0efeee4eee100896f810aa59647b63e9e0d71a"
+  version "0.6.0"
+  sha256 "0e5722fe6ff0d510d2318ee5c0ae3291279606e16b4c606ff844f007d0236f88"
 
   url "https://github.com/xiaolai/mogents-ai/releases/download/v#{version}/mogents-#{version}-macos-universal.zip"
   name "Mogents"
