@@ -1,10 +1,10 @@
 cask "sonovo" do
-  version "0.10.10"
-  sha256 "5e84582c92e406868a187b55d01316d36dfe89a60c62f4c4f27e58527a5d1683"
+  version "0.10.11"
+  sha256 "23e0a21522463fd4eda6586d8dda2930fe3fdc79f03a348f00158f81ca17324a"
 
   url "https://github.com/xiaolai/sonovo/releases/download/v#{version}/Sonovo-#{version}.dmg"
   name "Sonovo"
-  desc "Personal macOS workspace for media, documents, and tmux terminals"
+  desc "Personal workspace for media, documents, and tmux terminals"
   homepage "https://github.com/xiaolai/sonovo"
 
   livecheck do
