@@ -20,15 +20,7 @@ cask "mogents" do
          target: "mogents"
 
   caveats <<~EOS
-    This release renames the product to mogents and changes the bundle identity.
-    macOS treats it as a different app, so there is no container, Keychain or
-    pairing migration. If you are coming from mogents-ai, uninstall it first:
-
-      brew uninstall --cask mogents-ai
-
-    Then install this cask and re-pair your devices.
-
-    Before upgrading or uninstalling, choose Quit mogents… from the tray menu
-    and confirm. Command-Q does not quit the app or its local helper.
+    Closing the client does not stop the local helper or your tmux sessions.
+    To stop the helper deliberately, use Quit from the menu-bar item and confirm.
   EOS
 end
