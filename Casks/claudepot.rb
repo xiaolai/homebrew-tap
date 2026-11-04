@@ -1,13 +1,13 @@
 cask "claudepot" do
-  version "0.7.2"
+  version "0.7.3"
 
   on_arm do
-    sha256 "a9b39c2db30f185bbeb0d2cc51e307762dae37b9fafc8c7cbd4e3016f5056cfa"
+    sha256 "5a682ee696bb9f919e2b540713b6e549290677b6a351bfa09749dd1edb1611c6"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-aarch64.dmg"
   end
   on_intel do
-    sha256 "f783be573df9d79924c176a2fd2502386d5e5a2919bbaadac156029a43e9ccdf"
+    sha256 "1a1fa7d74607c89dc12bdea74593dda81270781a26c1ad5b30aa9bf6c992c226"
 
     url "https://github.com/xiaolai/claudepot-app/releases/download/v#{version}/Claudepot-x86_64.dmg"
   end
@@ -31,11 +31,15 @@ cask "claudepot" do
     strategy :github_latest
   end
 
-  # Symbol form, not the string ">= :catalina". Homebrew
-  # deprecated string comparison for `depends_on macos:` and
-  # warns on every command that loads the cask; the bare symbol
-  # already means "this version or newer".
-  depends_on macos: :catalina
+  # No `depends_on macos:` on purpose. The app's floor is 10.15
+  # (tauri.conf.json minimumSystemVersion), below the oldest
+  # macOS Homebrew itself runs on, so a floor here can never
+  # refuse anyone. Homebrew 7 made `:catalina` a hard error
+  # ("disabled! There is no replacement") that broke every
+  # command loading this cask, and each newer symbol is
+  # scheduled to fail the same way when its support ends.
+  # Add one back only if the app's floor rises above
+  # Homebrew's.
 
   app "Claudepot.app"
 
