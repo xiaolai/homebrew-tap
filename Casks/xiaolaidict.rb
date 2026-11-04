@@ -12,6 +12,8 @@ cask "xiaolaidict" do
     strategy :github_latest
   end
 
+  disable! date: "2026-11-04", because: :unmaintained, replacement_cask: "xdict"
+
   # Apple Silicon only, and not merely untested on Intel: the model service links
   # MLX, which is Metal on Apple Silicon. `lipo -archs` on the shipped binary
   # reports arm64 alone.
